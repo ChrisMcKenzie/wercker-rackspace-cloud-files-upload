@@ -1,0 +1,26 @@
+name: rackspace-cloud-files-upload
+version: 0.0.1
+keywords:
+  - rackspace
+  - upload
+  - files
+  - file
+properties:
+  region:
+    type: string
+    default: IAD
+  username:
+    type: string
+    required: true
+  token:
+    type: string
+    required: true
+  container:
+    type: string
+    required: true
+  path:
+    type: string
+    required: true
+  file_path:
+    type: string
+    required: true
