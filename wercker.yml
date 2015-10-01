@@ -11,7 +11,7 @@ build:
             code: go get .
 
         - script:
-            name: fetch dependencies
+            name: install app
             code: go install
 
         - script:

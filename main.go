@@ -13,12 +13,13 @@ const (
 )
 
 var (
-	user      = flag.String("user", "", "username for rackspace")
-	key       = flag.String("key", "", "apikey for rackspace")
-	container = flag.String("container", "", "container to put file in.")
-	file      = flag.String("file", "", "path to file that will be uploaded")
-	path      = flag.String("path", "", "path to upload given file to")
-	region    = flag.String("region", "", "region that we are accessing")
+	user        = flag.String("user", "", "username for rackspace")
+	key         = flag.String("key", "", "apikey for rackspace")
+	container   = flag.String("container", "", "container to put file in.")
+	file        = flag.String("file", "", "path to file that will be uploaded")
+	path        = flag.String("path", "", "path to upload given file to")
+	region      = flag.String("region", "", "region that we are accessing")
+	contentType = flag.String("content-type", "", "content-type of file")
 )
 
 func init() {
@@ -57,7 +58,7 @@ func main() {
 	}
 
 	// Write Bytes
-	err = c.ObjectPutBytes(*container, *path, contents, "")
+	err = c.ObjectPutBytes(*container, *path, contents, *contentType)
 	if err != nil {
 		fmt.Printf("Unable to upload data: %s", err)
 		return
