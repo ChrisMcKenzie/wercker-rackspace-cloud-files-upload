@@ -4,5 +4,4 @@ build:
     steps:
         - shellcheck:
             files: run.sh
-        - pip-install:
-            packages_list: "pyrax"
+        - pip-install
