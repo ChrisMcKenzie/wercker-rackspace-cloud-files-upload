@@ -22,4 +22,3 @@ build:
             name: prune
             code: |
                 rm -rf $WERCKER_ROOT/.git
-                rm $WERCKER_ROOT/.gitignore
