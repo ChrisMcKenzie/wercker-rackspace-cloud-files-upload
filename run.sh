@@ -1,3 +1,5 @@
+#!/bin/bash
+
 if [ ! -n "$WERCKER_RACKSPACE_CLOUD_FILES_UPLOAD_TOKEN" ]; then
   error 'Please specify token property'
   exit 1
