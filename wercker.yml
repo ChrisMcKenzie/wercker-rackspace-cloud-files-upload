@@ -1,7 +1,25 @@
-box: wercker/default
+box: wercker/golang
 
 build:
     steps:
-        - shellcheck:
-            files: run.sh
-        - pip-install
+        - shellcheck
+
+        - setup-go-workspace@1.0.4
+
+        - script:
+            name: fetch dependencies
+            code: go get .
+
+        - script:
+            name: fetch dependencies
+            code: go install
+
+        - script:
+            name: prepare output
+            code: mv $GOPATH/bin/wercker-rackspace-cloud-files-upload $WERCKER_ROOT/wercker-rackspace-cloud-files-upload
+
+        - script:
+            name: prune
+            code: |
+                rm -rf $WERCKER_ROOT/.git
+                rm $WERCKER_ROOT/.gitignore
