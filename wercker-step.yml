@@ -24,3 +24,6 @@ properties:
   file_path:
     type: string
     required: true
+  content_type:
+    type: string
+    required: false
